@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <title>החוקר הקטן - בינה מלאכותית לומדת מהכיתה</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>החוקר הקטן</h1>
+        <h2>סקר כיתתי ולמידה עם בינה מלאכותית</h2>
+        <div id="survey-section">
+            <form id="survey-form">
+                <label>מה המאכל האהוב עליך?
+                    <select name="food" required>
+                        <option value="">בחר</option>
+                        <option value="פיצה">פיצה</option>
+                        <option value="המבורגר">המבורגר</option>
+                        <option value="סושי">סושי</option>
+                        <option value="פלאפל">פלאפל</option>
+                        <option value="אחר">אחר</option>
+                    </select>
+                </label>
+                <label>מה הצבע האהוב עליך?
+                    <select name="color" required>
+                        <option value="">בחר</option>
+                        <option value="כחול">כחול</option>
+                        <option value="אדום">אדום</option>
+                        <option value="ירוק">ירוק</option>
+                        <option value="צהוב">צהוב</option>
+                        <option value="סגול">סגול</option>
+                    </select>
+                </label>
+                <button type="submit">שלח</button>
+            </form>
+        </div>
+        <div id="results-section" style="display:none;">
+            <h3>תוצאות הסקר</h3>
+            <div id="table-container"></div>
+            <div class="charts">
+                <canvas id="foodChart"></canvas>
+                <canvas id="colorChart"></canvas>
+            </div>
+        </div>
+        <div id="ai-section" style="display:none;">
+            <h3>הבינה המלאכותית מסיקה מסקנות:</h3>
+            <div id="ai-output"></div>
+            <input id="ai-question" placeholder="שאל את הבינה על התוצאות..." />
+            <button onclick="askAI()">שלח שאלה</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

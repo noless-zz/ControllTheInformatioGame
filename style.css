@@ -1,0 +1,69 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f5f6fa;
+    margin: 0;
+    direction: rtl;
+}
+.container {
+    max-width: 700px;
+    margin: 30px auto;
+    background: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 40px #c6c6c6;
+}
+label {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+select, input[type="text"], input[type="number"], input[type="submit"], button {
+    font-size: 1em;
+    padding: 6px 14px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-top: 4px;
+}
+button, input[type="submit"] {
+    background: #4A90E2;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background .2s;
+}
+button:hover, input[type="submit"]:hover {
+    background: #357abd;
+}
+h1, h2, h3 {
+    text-align: center;
+}
+#table-container {
+    margin: 20px 0;
+}
+.charts {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+canvas {
+    background: #fafafa;
+    border-radius: 10px;
+    margin: 10px 0;
+    max-width: 300px;
+}
+#ai-output {
+    margin: 15px 0;
+    background: #e5f1ff;
+    border-radius: 8px;
+    padding: 12px;
+    min-height: 40px;
+    font-size: 1.1em;
+}
+#ai-section input {
+    width: 60%;
+    margin-left: 10px;
+}
