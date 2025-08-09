@@ -1,8 +1,57 @@
+// Add at the top of script.js
+import { initializeApp } from "firebase/app";
+import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore";
+
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyC5Ebb9icuPOCpPQ22Jv1aspRh6qXVnsJ0",
+    authDomain: "controltheinformationgame.firebaseapp.com",
+    projectId: "controltheinformationgame",
+    storageBucket: "controltheinformationgame.firebasestorage.app",
+    messagingSenderId: "812042114078",
+    appId: "1:812042114078:web:e989d3ad09764bbf4cca0f",
+    measurementId: "G-HX06QJY0C8"
+  };
+
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+
 const surveyData = [];
 const questions = [
     { field: "food", label: "מאכל אהוב" },
     { field: "color", label: "צבע אהוב" }
 ];
+
+async function fetchSurveyData() {
+    const querySnapshot = await getDocs(collection(db, "survey"));
+    surveyData.length = 0;
+    querySnapshot.forEach((doc) => {
+        surveyData.push(doc.data());
+    });
+    updateResults();
+}
+
+document.getElementById('survey-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const entry = {
+        food: form.food.value,
+        color: form.color.value
+    };
+    if (!entry.food || !entry.color) return;
+    await addDoc(collection(db, "survey"), entry);
+    form.reset();
+    fetchSurveyData();
+});
 
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('survey-form').addEventListener('submit', function(e) {
