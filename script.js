@@ -53,6 +53,7 @@ document.getElementById('survey-form').addEventListener('submit', async function
     fetchSurveyData();
 });
 */
+document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('survey-form').addEventListener('submit', function(e) {
         e.preventDefault();
         const form = e.target;
