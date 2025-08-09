@@ -30,7 +30,7 @@ const questions = [
     { field: "food", label: "מאכל אהוב" },
     { field: "color", label: "צבע אהוב" }
 ];
-
+/*
 async function fetchSurveyData() {
     const querySnapshot = await getDocs(collection(db, "survey"));
     surveyData.length = 0;
@@ -52,8 +52,8 @@ document.getElementById('survey-form').addEventListener('submit', async function
     form.reset();
     fetchSurveyData();
 });
-
-/*     document.getElementById('survey-form').addEventListener('submit', function(e) {
+*/
+    document.getElementById('survey-form').addEventListener('submit', function(e) {
         e.preventDefault();
         const form = e.target;
         const entry = {
@@ -78,7 +78,7 @@ function updateResults() {
     renderCharts();
     aiIntro();
 }
- */
+
 function renderTable() {
     let html = '<table><thead><tr>';
     html += questions.map(q => `<th>${q.label}</th>`).join('');
