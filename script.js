@@ -1,10 +1,10 @@
 // Add at the top of script.js
-import { initializeApp } from "firebase/app";
-import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore";
+//import { initializeApp } from "firebase/app";
+//import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore";
 
   // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-analytics.js";
+ // import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+//  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-analytics.js";
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -21,8 +21,8 @@ import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore";
   };
 
 
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+//const app = initializeApp(firebaseConfig);
+//const db = getFirestore(app);
 
 
 const surveyData = [];
@@ -30,7 +30,7 @@ const questions = [
     { field: "food", label: "מאכל אהוב" },
     { field: "color", label: "צבע אהוב" }
 ];
-
+/*
 async function fetchSurveyData() {
     const querySnapshot = await getDocs(collection(db, "survey"));
     surveyData.length = 0;
@@ -51,7 +51,7 @@ document.getElementById('survey-form').addEventListener('submit', async function
     await addDoc(collection(db, "survey"), entry);
     form.reset();
     fetchSurveyData();
-});
+});*/
 
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('survey-form').addEventListener('submit', function(e) {
