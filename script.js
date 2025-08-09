@@ -75,6 +75,8 @@ document.addEventListener('DOMContentLoaded', function() {
 function updateResults() {
     document.getElementById('results-section').style.display = 'block';
     document.getElementById('ai-section').style.display = 'block';
+    document.getElementById('ai-input').style.display = 'block';
+
     renderTable();
     renderCharts();
     aiIntro();
